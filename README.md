@@ -7,11 +7,16 @@
 - Defined routes (app/routes.js) and service for working with $HTTP (app/libraryService.js)
 
 
+##Installation
+- $ git clone https://github.com/hilarybarr/AngularLibrary.git
+- npm install
+- node server.js
+- (Run app from localhost: http://http://localhost/8080)
+
 ##To Do
 - Determine why double binding isn't automatically saving changes to library collection
 - Add Quantity and Price functions
 - Host database on Modulus.io
-
 
 ##Questions:
 - How can you keep Node server running?
