@@ -1,6 +1,6 @@
 <!doctype html>
 
-<!-- ASSIGN OUR ANGULAR MODULE -->
+<!-- ASSIGN ANGULAR MODULE -->
 <html ng-app="libraryApp">
 <head>
 	<!-- META -->
@@ -8,55 +8,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
     <link rel="stylesheet" type="text/css" href="app.css">
 	<title>Library Collection App</title>
-
-	<!-- SCROLLS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-
-
-	<!-- SPELLS -->
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
-
-	<script src="libraryController.js"></script> <!-- load up our controller -->
-	<script src="libraryService.js"></script> <!-- load our todo service -->
-	<script src="libraryApp.js"></script> <!-- load our main application -->
-
+	<script src="libraryController.js"></script> <!-- load up controller -->
+	<script src="libraryService.js"></script> <!-- load library service -->
+	<script src="libraryApp.js"></script> <!-- load main application -->
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="libraryController">
 <!--Nav-->
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <h2> Library Collection App</h2>
-            <form class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
-
-
-
-
-
-<div class="container">
-
-
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <h2> Library Collection App</h2>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+<!--Add Book -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2 class="panel-title"> Add New Book:</h2>
@@ -95,48 +80,48 @@
                 <img id="bookimg" src="http://2.bp.blogspot.com/-KLsxJE99kIg/U_4pAen_DtI/AAAAAAAAV6k/s1qwZvyCWYI/s1600/Bible_and_Swirls_Page_Divider2.png">
             </div>
         </div>
-<br>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h2 class="panel-title"> Library Collection</h2>
-    </div>
-    <div class="panel-body">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th></th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="book in books">
-                <td>{{$index + 1}}</td>
-                <td><input class="form-control" type="text"   ng-model="book.title"></td>
-                <td><input class="form-control" type="text"   ng-model="book.author"></td>
-                <td><input class="form-control" type="number" ng-model="book.price"></td>
-                <td><input class="form-control" type="number" ng-model="book.quantity"></td>
-                <td>
-                    <button class="btn" type="button" ng-click="deleteBook(book._id)">
-                        <span class="glyphicon glyphicon-remove"></span> Delete
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td> <strong>Totals:</strong></td>
-                <td></td>
-                <td></td>
-                <td>$</td>
-                <td>#</td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+        <br>
+<!--Library Collection -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"> Library Collection</h2>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="book in books">
+                        <td>{{$index + 1}}</td>
+                        <td><input class="form-control" type="text"   ng-model="book.title"></td>
+                        <td><input class="form-control" type="text"   ng-model="book.author"></td>
+                        <td><input class="form-control" type="number" ng-model="book.price"></td>
+                        <td><input class="form-control" type="number" ng-model="book.quantity"></td>
+                        <td>
+                            <button class="btn" type="button" ng-click="deleteBook(book._id)">
+                                <span class="glyphicon glyphicon-remove"></span> Delete
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <strong>Totals:</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td>$</td>
+                        <td>#</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 </body>
 </html>
