@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="app.css">
 	<title>Library Collection App</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
 	<script src="libraryController.js"></script> <!-- load up controller -->
 	<script src="libraryService.js"></script> <!-- load library service -->
@@ -116,7 +115,7 @@
                         <td></td>
                         <td></td>
                         <td>$</td>
-                        <td>#</td>
+                        <td>{{totalQuantity()}}</td>
                         <td></td>
                     </tr>
                     </tbody>

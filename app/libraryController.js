@@ -49,11 +49,14 @@ angular.module('libraryController', [])
 		};
 
         // TOTAL_PRICE ==================================================================
-        $scope.totalPrice= function(){
-
-
-        }
-
+        //$scope.totalQuantity= function(){
+        //    Books.get()
+        //        .success(function(data) {
+        //            return data.aggregate(
+        //                {$group: {_id: '$quantity', total: {$sum: '$quantity'}}})
+        //        };
+        //        };
+        //
 
 
 

@@ -13,12 +13,18 @@
 - node server.js
 - (Run app from localhost: http://http://localhost/8080)
 
+##Questions:
+- How to get update to work? Should it be automatic because of ng-model or do I need Put methods (in MaybeUse.md)
+-totalQuantity (and totalPrice) methods
+- How can you keep Node server running?
+- Should app architecture be different?
+- When does Remedy use localStorage vs. Mongo?
+
+
 ##To Do
-- Determine why double binding isn't automatically saving changes to library collection
+-Enable update
 - Add Quantity and Price functions
+- Format currency
 - Host database on Modulus.io
 
-##Questions:
-- How can you keep Node server running?
-- Does Remedy ever use localStorage?
 
