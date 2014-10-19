@@ -1,7 +1,7 @@
 {
-  "name"         : "node-todo",
+  "name"         : "library-collection",
   "version"      : "0.0.0",
-  "description"  : "Simple todo application.",
+  "description"  : "Library collection application.",
   "main"         : "server.js",
   "author"       : "Scotch",
   "dependencies" : {

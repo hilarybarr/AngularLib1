@@ -1,32 +1,19 @@
-# Node Todo App
+#Hilary's Library Collection App
 
-A Node app built with MongoDB and Angular. For demonstration purposes and a tutorial.
+-Modified package.json to include dependencies for the Express Node framework and Mongoose
+-Used Server.js to set up Express and connection to a MongoDB server (currently localhost, specified in config/database.js).
+-Instantiated ng-app in libraryApp.js
+-Set up model for books in models/book.js
+-Defined routes (app/routes.js) and service for working with $HTTP (app/libraryService.js)
 
-Node provides the RESTful API. Angular provides the frontend and accesses the API. MongoDB stores like a hoarder.
 
-## Requirements
+To Do
+-Determine why double binding isn't automatically saving changes to library collection
+-Add Quantity and Price functions
+-Host database on Modulus.io
 
-- [Node and npm](http://nodejs.org)
 
-## Installation
+Questions:
+-How can you keep Node server running?
+-Does Remedy ever use localStorage?
 
-1. Clone the repository: `git clone git@github.com:scotch-io/node-todo`
-2. Install the application: `npm install`
-3. Start the server: `node server.js`
-4. View in browser at `http://localhost:8080`
-
-## Tutorial Series
-
-This repo corresponds to the Node Todo Tutorial Series on [scotch.io](http://scotch.io)
-
-Each branch represents a certain tutorial.
-- tut1-starter: [Creating a Single Page Todo App with Node and Angular](http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular)
-- tut2-services: Coming Soon
-- tut3-auth: Coming Soon
-- tut4-sockets: Coming Soon
-- tut5-redis: Coming Soon
-- tut6-organization: Coming Soon
-
-Happy Todo-ing!
-
-![Todo-aholic](http://i.imgur.com/ikyqgrn.png)
