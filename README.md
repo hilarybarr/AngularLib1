@@ -7,13 +7,13 @@
 - Defined routes (app/routes.js) and service for working with $HTTP (app/libraryService.js)
 
 
-To Do
--Determine why double binding isn't automatically saving changes to library collection
--Add Quantity and Price functions
--Host database on Modulus.io
+##To Do
+- Determine why double binding isn't automatically saving changes to library collection
+- Add Quantity and Price functions
+- Host database on Modulus.io
 
 
-Questions:
--How can you keep Node server running?
--Does Remedy ever use localStorage?
+##Questions:
+- How can you keep Node server running?
+- Does Remedy ever use localStorage?
 
