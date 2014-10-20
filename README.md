@@ -15,14 +15,15 @@
 
 ##Questions:
 - How to get update to work? Should it be automatic because of ng-model or do I need Put methods (in MaybeUse.md)
--totalQuantity (and totalPrice) methods
+- totalQuantity (and totalPrice) methods
 - How can you keep Node server running?
 - Should app architecture be different?
 - When does Remedy use localStorage vs. Mongo?
 
 
 ##To Do
--Enable update
+- Enable update
+- Make server responsive ($broadcast in routes/sockets)
 - Add Quantity and Price functions
 - Format currency
 - Host database on Modulus.io

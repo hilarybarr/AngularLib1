@@ -5,13 +5,12 @@
 <head>
 	<!-- META -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="app.css">
 	<title>Library Collection App</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
-	<script src="libraryController.js"></script> <!-- load up controller -->
-	<script src="libraryService.js"></script> <!-- load library service -->
+
 	<script src="libraryApp.js"></script> <!-- load main application -->
 </head>
 <!-- SET THE CONTROLLER -->
@@ -41,6 +40,7 @@
     </nav>
     <div class="container">
 <!--Add Book -->
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2 class="panel-title"> Add New Book:</h2>
@@ -72,7 +72,7 @@
                                 <input type="number" ng-model="formData.quantity" >
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg" ng-click="createBook()">Save</button>
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="createBook(formData)">Save</button>
                     </form>
                 </div>
                 <br>
@@ -95,6 +95,7 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -105,7 +106,12 @@
                         <td><input class="form-control" type="number" ng-model="book.price"></td>
                         <td><input class="form-control" type="number" ng-model="book.quantity"></td>
                         <td>
-                            <button class="btn" type="button" ng-click="deleteBook(book._id)">
+                            <button class="btn" type="button" ng-click="updateBook(book)">
+                                <span class="glyphicon glyphicon-check"></span> Update
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn" type="button" ng-click="deleteBook($index)">
                                 <span class="glyphicon glyphicon-remove"></span> Delete
                             </button>
                         </td>
@@ -114,8 +120,9 @@
                         <td> <strong>Totals:</strong></td>
                         <td></td>
                         <td></td>
-                        <td>$</td>
+                        <td>${{totalPrice()}}</td>
                         <td>{{totalQuantity()}}</td>
+                        <td></td>
                         <td></td>
                     </tr>
                     </tbody>
