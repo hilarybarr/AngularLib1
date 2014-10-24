@@ -1,7 +1,4 @@
 
-//WHEN TO USE VAR VS SCOPE
-
-
 var libraryApp = angular.module('libraryApp' , []);
 
 libraryApp.controller('libraryController',['$scope', '$http', function($scope, $http) {
@@ -9,35 +6,34 @@ libraryApp.controller('libraryController',['$scope', '$http', function($scope, $
 
 //Call Symfony show action to return JSON object with books
 //    $scope.refreshBooks = function () {
-        $http.get('http://localhost:8000/app_dev.php/show').
-            success(function (data, status, headers, config) {
-                // this callback will be called asynchronously
-                // when the response is available
-                $scope.books = data;
+    $http.get('http://localhost:8000/app_dev.php/show').
+        success(function (data, status, headers, config) {
+            $scope.books = data;
+            console.log(data);
+        }).
+        error(function (data, status, headers, config) {
+            console.log("error")
+        });
+
+
+
+//
+//    ////   //Create book
+    $scope.createBook = function() {
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8000/app_dev.php/create',
+            data: $scope.formData,
+            headers: {"Content-Type": "application/x-www-form-urlencoded"}  // set the headers so angular passing info as form data (not request payload)
+        }).success(function(data) {
                 console.log(data);
-            }).
-            error(function (data, status, headers, config) {
-                console.log("error")
+                $scope.books.push(data);
+                $scope.formData={};
+                //$scope.refresh();
+
             });
-    }
-//}
-
-
-
-
-    //   //Create book
-    $scope.createBook=function(formData){
-        $http.post('http://localhost:8000/app_dev.php/create').
-            success(function(data, status, headers, config) {
-                // this callback will be called asynchronously
-                // when the response is available
-                $scope.books=data;
-                console.log(data);
-            }).
-            error(function(data, status, headers, config) {
-                console.log("error")
-            });
-
+    };
+}
 
 
         //$scope.books.push(
@@ -47,8 +43,14 @@ libraryApp.controller('libraryController',['$scope', '$http', function($scope, $
         //        price: formData.price,
         //        quantity: formData.quantity
         //    })
-        $scope.formData={}; //clear form data
-    }
+    //    $scope.formData={}; //clear form data
+    //}
+
+
+
+
+
+
 
 
  //   //Delete book
@@ -126,4 +128,4 @@ libraryApp.controller('libraryController',['$scope', '$http', function($scope, $
 //        return $scope.tprice;
 //    }
 
-}])
+])
