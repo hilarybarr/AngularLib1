@@ -36,19 +36,6 @@ libraryApp.controller('libraryController',['$scope', '$http', function($scope, $
 }
 
 
-        //$scope.books.push(
-        //    {
-        //        title: formData.title,
-        //        author: formData.author,
-        //        price: formData.price,
-        //        quantity: formData.quantity
-        //    })
-    //    $scope.formData={}; //clear form data
-    //}
-
-
-
-
 
 
 
