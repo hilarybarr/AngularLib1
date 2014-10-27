@@ -46,7 +46,7 @@ libraryApp.controller('libraryController',['$scope', '$http', function($scope, $
 ////Update book
 //PROBLEM: Only works as POST, not as PUT
 $scope.updateBook = function(book) {
-    console.log(book);
+    console.log("We are updating the book");
     $http({
         method: 'POST',
         url: 'http://localhost:8000/app_dev.php/update/'+book.id,
