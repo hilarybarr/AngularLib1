@@ -2,6 +2,12 @@ var libraryApp = angular.module('libraryApp' , []);
 
 libraryApp.controller('libraryController',['$scope', '$http', function($scope, $http) {
 
+libraryApp.config(['$httpProvider', function($httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+}
+]);
+
 
 //Call Symfony show action to return JSON object with books
     $scope.load=function(){
@@ -36,8 +42,12 @@ libraryApp.controller('libraryController',['$scope', '$http', function($scope, $
 //Delete book
     $scope.deleteBook= function(id) {
         $http({
-            method: 'DELETE',
-            url: 'http://localhost:8000/app_dev.php/delete/' + id
+            method: 'POST',
+            url: 'http://localhost:8000/app_dev.php/delete/'+id,
+            data: id,
+            headers: {"Content-Type": "application/x-www-form-urlencoded"}
+        }).success(function(data){
+            console.log(data);
         });
         $scope.load();
 
@@ -52,7 +62,9 @@ $scope.updateBook = function(book) {
         url: 'http://localhost:8000/app_dev.php/update/'+book.id,
         data: book,
         headers: {"Content-Type": "application/x-www-form-urlencoded"}  // set the headers so angular passing info as form data (not request payload)
-    });
+    }).success(function(data){
+        console.log(data);
+        });
     $scope.load();
 
 };
